@@ -8,11 +8,11 @@ contract Migrations {
 
   event ValueChanged(uint256 newValue);
 
-  function store(uint256 newValue) public {
-        value = newValue;
-        emit ValueChanged(newValue);
+  function set(uint256 _value) public {
+        value = _value;
+        emit ValueChanged(value);
   }
-  function retrieve() public view returns (uint256) {
+  function get() public view returns (uint256) {
        return value;
   }
   modifier restricted() {
