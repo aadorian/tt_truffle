@@ -1,0 +1,25 @@
+{
+  "name": "tt_truffle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aadorian/tt_truffle.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aadorian/tt_truffle/issues"
+  },
+  "homepage": "https://github.com/aadorian/tt_truffle#readme",
+  "devDependencies": {
+    "@openzeppelin/truffle-upgrades": "^1.8.0",
+    "chai": "^4.3.4",
+    "truffle": "^5.4.3"
+  }
+}
