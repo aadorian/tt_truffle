@@ -22,7 +22,8 @@ const HDWalletProvider = require('@truffle/hdwallet-provider');
 //
 // const fs = require('fs');
 //TESTING use process.env in real production envirolments
-const mnemonic = "cancel surface pelican unfold concert city cheap blur female dog tragic era"
+const MNEMONIC = "cancel surface pelican unfold concert city cheap blur female dog tragic era"
+const RPC_URL =  `https://api.avax-test.network/ext/bc/C/rpc`
 module.exports = {
   /**
    * Networks define how you connect to your ethereum client and let you set the
@@ -58,7 +59,7 @@ module.exports = {
     // Useful for deploying to a public network.
     // NB: It's important to wrap the provider as a function.
      avax: {
-      provider: () => new HDWalletProvider(mnemonic, `https://api.avax-test.network/ext/bc/C/rpc`),
+      provider: () => new HDWalletProvider(MNEMONIC,RPC_URL),
       network_id:  1,       // Ropsten's id
       gas: 5500000,        // Ropsten has a lower block limit than mainnet
       confirmations: 2,    // # of confs to wait between deployments. (default: 0)
