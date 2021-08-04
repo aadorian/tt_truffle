@@ -17,12 +17,12 @@
  * phrase from a file you've .gitignored so it doesn't accidentally become public.
  *
  */
-
+require("dotenv").config();
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 //
 // const fs = require('fs');
 //TESTING use process.env in real production envirolments
-const MNEMONIC = "cancel surface pelican unfold concert city cheap blur female dog tragic era"
+const MNEMONIC = process.env.MNEMONIC // NEVER SHARE YOUR MNEMONIC "cancel surface pelican unfold concert city cheap blur female dog tragic era" 
 const RPC_URL =  `https://api.avax-test.network/ext/bc/C/rpc`
 module.exports = {
   /**
