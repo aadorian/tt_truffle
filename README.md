@@ -136,7 +136,7 @@ npx truffle test
 ```
 
 # Faucet & Explorer
-Mnemonic for TEST purposes
+Mnemonic for TEST purposes NEVER SHARE YOUR MNEMONIC PHRASE!!
 ```
 cancel surface pelican unfold concert city cheap blur female dog tragic era
 ```
@@ -175,9 +175,26 @@ The contract address of this example is in
  The contract can be query in the Avax Explorer [](https://cchain.explorer.avax-test.network/address/0xa5bC2Ca1Ce90657Fc66d694fb8c264e29eAF6F7c/transactions)
 
 
+# Secure your code
 
+```javascript=
+npm i dotenv
+```
 
+create .env file with 
+add the 
 
+require("dotenv").config(); in truffle-config.js
+
+define 
+const MNEMONIC = process.env.MNEMONIC
+
+Also hide it from your Git repo. The .gitignore file should look like this
+
+```
+node_modules
+.env
+```
 
 
 | Command | Terminal | Description |
@@ -202,6 +219,8 @@ Previous to deploy
 
 
 
+# Dependencies
+
 
 
 
@@ -212,6 +231,9 @@ https://www.trufflesuite.com/docs/truffle/overview
 https://www.avax.network/
 
 https://docs.avax.network/learn/avalanche-bridge-faq
+
+https://www.avalabs.org/whitepapers
+
 
 https://code.visualstudio.com/
 
