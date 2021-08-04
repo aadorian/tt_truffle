@@ -1,6 +1,6 @@
 ![](https://i.imgur.com/GA0LyT3.png)
 
-Introduction 
+# Introduction 
 What is Truffle ? 
 
 
@@ -50,7 +50,13 @@ Lets create a .gitignore file with this line
 
 # Install Truffle 
 
-`npm i --save-dev truffle`
+```javascript=
+npm i --save-dev truffle
+```
+
+
+For deploying contracts also install 
+npm i @truffle/hdwallet-provider
 
 
 # Create a Truffle Proyect
@@ -129,6 +135,24 @@ To test the contract we use
 npx truffle test
 ```
 
+# Faucet & Explorer
+Mnemonic for TEST purposes
+```
+cancel surface pelican unfold concert city cheap blur female dog tragic era
+```
+> 0xF6F057F7C9B37cB9d615008Cbd009d586b1BDEde
+
+
+'https://faucet.avax-test.network'
+'https://docs.avax.network/build/tutorials/smart-contracts/deploy-a-smart-contract-on-avalanche-using-remix-and-metamask'
+'https://cchain.explorer.avax-test.network/'
+ The URL for RPC calls is https://api.avax-test.network/ext/bc/C/rpc and the network id is 0xa869
+
+
+For funding your account use https://faucet.avax-test.network
+
+
+
 
 
 # Compile with Truffle 
@@ -137,15 +161,44 @@ npx truffle test
 npx truffle compile
 ```
 
+# Migrate with Truffle (Avax Testnet)
+
+
+
+```shell=
+npx truffle migrate --network avax
+```
+
+The contract address of this example is in
+0xa5bC2Ca1Ce90657Fc66d694fb8c264e29eAF6F7c
+ 
+ The contract can be query in the Avax Explorer [](https://cchain.explorer.avax-test.network/address/0xa5bC2Ca1Ce90657Fc66d694fb8c264e29eAF6F7c/transactions)
+
+
+
+
+
+
+
 | Command | Terminal | Description |
 | -------- | -------- | -------- |
 | npx truffle init    | ![](https://i.imgur.com/HZqjcDx.png)     | Text     |
 | npx truffle compile    |  ![](https://i.imgur.com/7zle53o.png)   | Text     |
 | npx truffle help    | ![](https://i.imgur.com/p3yZJgK.png)  | Text     |
 | npx truffle test    | ![](https://i.imgur.com/tjNBoSj.png)  | Text     |
+| npx truffle migrate --network avax   | ![](https://i.imgur.com/3ZNsa5J.png) | Text     |
+| npx   |  |    |
 
 
+Previous to deploy 
 
+ Found your account with Faucet tokens using the public key
+  ![](https://i.imgur.com/4eVHXFY.png)
+  View the transaction in the Explorer
+   ![](https://i.imgur.com/1T9IoBW.png) |
+  Once the contract is deploy on the network it can be access in the explorer
+ 
+![](https://i.imgur.com/EPRiENL.png) 
 
 
 

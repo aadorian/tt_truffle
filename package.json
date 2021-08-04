@@ -21,5 +21,8 @@
     "@openzeppelin/truffle-upgrades": "^1.8.0",
     "chai": "^4.3.4",
     "truffle": "^5.4.3"
+  },
+  "dependencies": {
+    "@truffle/hdwallet-provider": "^1.4.2"
   }
 }
