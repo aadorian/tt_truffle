@@ -69,6 +69,12 @@ For deploying contracts we will also install
 npm i @truffle/hdwallet-provider
 ```
 
+### Tutorial Source Code in Github 
+
+```
+git clone https://github.com/aadorian/truffle_avalanche.git
+```
+
 
 # Create a Truffle Project
 
@@ -173,27 +179,11 @@ The following links are important for an account to have funds and to be able to
 
 # Compile with Truffle 
 
+To compile existing smart contracts in Truffle (in our case Migrations.sol) we use: 
 ``` shell
 npx truffle compile
 ```
 
-# Interacting with the Contract
-
-We can start an instance of ganache (local blockchain) to interact with our contract
-`npx truffle develop` 
-
-See the deployed contracts
-`npx truffle networks` 
-
-
-
-
-``` javascript
-const myContract = await Migrations.deployed();
-let accounts = await web3.eth.getAccounts()
-const result = await myContract.get();
-const tx = await myContract.set(1).send({from: aaccounts[0]});
-```
 
 
 
@@ -283,10 +273,20 @@ Previous to deploy claim some faucets for the account.
 
 
 
-### Tutorial Source Code in Github 
+# Interacting with the Contract
 
-```
-git clone https://github.com/aadorian/truffle_avalanche.git
+We can start an instance of ganache (local blockchain) to interact with our contract
+`npx truffle develop` 
+
+See the deployed contracts
+`npx truffle networks` 
+
+And using the `truffle develop (console)`
+``` javascript
+const myContract = await Migrations.deployed();
+let accounts = await web3.eth.getAccounts()
+const result = await myContract.get();
+const tx = await myContract.set(1).send({from: aaccounts[0]});
 ```
 
 # References
