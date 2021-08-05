@@ -154,6 +154,8 @@ In this tutorial we expose the mnemonic phrase only for TEST purposes remember: 
 ```
 cancel surface pelican unfold concert city cheap blur female dog tragic era
 ```
+The public key associated with the mnemonic phrase is
+
 > 0xF6F057F7C9B37cB9d615008Cbd009d586b1BDEde
 
 The following links are important for an account to have funds and to be able to deploy our contract in the blockchain. 
