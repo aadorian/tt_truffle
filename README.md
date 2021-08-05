@@ -22,29 +22,29 @@
 - [Dependencies](#dependencies)
     + [Video](#video)
     + [Faucet](#faucet)
-    + [Code Github](#code-github)
+    + [Tutorial Source Code in Github ](#code-github)
 - [References](#references)
 
 
 # Introduction 
-
-## Truffle 
+*What is Truffle ?*
 
 [Truffle](https://www.trufflesuite.com/truffle) is the most popular development framework for Ethereum with a mission to make your life a whole lot easier.
 
 
-In this tutorial we will learn how to create and test contract calls with Truffle. Create a project, install truffle and test a contract with Truffle and deploy it to Ava blockchain.
+In this tutorial we will learn how to create and test contract  with Truffle. We will fist create a project, install truffle and test a contract with truffle commands and finally deploy it to Avalanche blockchain.
 
+*What is Avalanche?*
+>[Avalanche ](https://docs.avax.network/)is an open-source platform for launching decentralized applications and enterprise blockchain deployments in one interoperable, highly scalable ecosystem. Avalanche is the first decentralized smart contracts platform built for the scale of global finance, with near-instant transaction finality. Ethereum developers can quickly build on Avalanche as [Solidity](https://docs.soliditylang.org/en/v0.8.6/) works out-of-the-box.
 # Previous Steps
 ## Install Node & VSCode
 
 Before compiling in truffle, we must have the following tools installed.
 
-[Visual Studio Code ](https://code.visualstudio.com/)(Visual Studio Code is a code editor redefined and optimized for building and debugging modern web and cloud applications)
-https://code.visualstudio.com/
-https://code.visualstudio.com/docs/
+[Visual Studio Code ](https://code.visualstudio.com/) is a code editor redefined and optimized for building and debugging modern web and cloud applications)
 
-[Node.js](https://nodejs.org/en/download/) (Node.js is designed to build scalable network applications.)
+
+[Node.js](https://nodejs.org/en/download/)  is designed to build scalable network applications.
 https://nodejs.org/en/download/
 
 # Create a Project
@@ -55,6 +55,7 @@ To initialize a project in node in the console of a terminal we execute the foll
 npm init -y 
 ```
 
+### Video 
 
 # Install Truffle 
 
@@ -74,7 +75,7 @@ npm i @truffle/hdwallet-provider
 
 Lets create a truffle project: 
 
-``` js
+```javascript=
 npx truffle init
 ```
 
@@ -85,7 +86,7 @@ and if issues of security warnings appear in the terminal, we must execute `npm 
 By default truffle creates the Migration.sol file. 
 We add a value and get and set methods. 
 
-``` solidity
+```solidity=
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.4.22 <0.9.0;
 
@@ -124,8 +125,7 @@ Lets install the testing framefork (there are several options but this time we w
 npm i --save-dev chai
 ```
 Lets create a Migration.test.js file
-
-``` js
+```javascript=
 const { expect } = require('chai');
 
 const Contract = artifacts.require('Migrations');
@@ -151,32 +151,20 @@ npx truffle test
 
 ## Faucet & Explorer
 
-In this tutorial we expose the
-Mnemonic only for TEST purposes remember to NEVER SHARE YOUR MNEMONIC PHRASE!!
+In this tutorial we expose the mnemonic phrase only for TEST purposes remember:  NEVER SHARE YOUR MNEMONIC PHRASE!!
 ```
 cancel surface pelican unfold concert city cheap blur female dog tragic era
 ```
-
-```
- 0xF6F057F7C9B37cB9d615008Cbd009d586b1BDEde
- ```
+> 0xF6F057F7C9B37cB9d615008Cbd009d586b1BDEde
 
 The following links are important for an account to have funds and to be able to deploy our contract in the blockchain. 
 
 
 
-| Description | Link  | GUI |
-| -------- | -------- | -------- |
-|Crypto faucets is an app or a website that distributes small amounts of cryptocurrencies. | 'https://faucet.avax-test.network'     | Text     |
-| Faucets URL  | [Avax Network](https://docs.avax.network/build/tutorials/smart-contracts/deploy-a-smart-contract-on-avalanche-using-remix-and-metamask)| -------- |
-| -------- | -------- | -------- |
-
-
-'https://cchain.explorer.avax-test.network/'
- The URL for RPC calls is https://api.avax-test.network/ext/bc/C/rpc and the network id is 0xa869
-
-
-For funding your account use https://faucet.avax-test.network
+| Description | Reference |
+| -------- | -------- | 
+|Crypto faucets is an app or a website that distributes small amounts of cryptocurrencies. | https://faucet.avax-test.network     |
+| Faucets URL  | [Avax Network](https://docs.avax.network/build/tutorials/smart-contracts/deploy-a-smart-contract-on-avalanche-using-remix-and-metamask)| 
 
 
 
@@ -187,6 +175,26 @@ For funding your account use https://faucet.avax-test.network
 ```shell=
 npx truffle compile
 ```
+
+# Interacting with the Contract
+
+We can start an instance of ganache (local blockchain) to interact with our contract
+`npx truffle develop` 
+
+See the deployed contracts
+`npx truffle networks` 
+
+
+
+
+``` javascript
+const myContract = await Migrations.deployed();
+let accounts = await web3.eth.getAccounts()
+const result = await myContract.get();
+const tx = await myContract.set(1).send({from: aaccounts[0]});
+```
+
+
 
 # Migrate with Truffle (Avax Testnet)
 
@@ -204,35 +212,42 @@ The contract address of this example is in
 
 # Secure your code
 
-``` node
+In order to avoid exposing the mnemonic phrase we use dotenv library. 
+
+```javascript=
 npm i dotenv
 ```
-
-create .env file with 
-add the 
-
-require("dotenv").config(); in truffle-config.js
-
-define 
-const MNEMONIC = process.env.MNEMONIC
-
-Also hide it from your Git repo. The .gitignore file should look like this
+Create a .env file  in the project and import in `truffle-config.js` with 
+`require("dotenv").config()`. Also remember to 
+access to the mnemonic now in a secure way using 
+``` javascript
+const MNEMONIC = process.env.MNEMONIC 
+```
+Also a good practice is to hide it from your Git repo using a `.gitignore` file should look like this
 
 ```
 node_modules
 .env
 ```
 
+## Advanced features using truffle 
+
+Advanced truffle  options are available online 
+https://www.trufflesuite.com/docs/truffle/reference/truffle-commands and also Avalanche blockchain concepts https://docs.avax.network/learn/platform-overview
+
+
+# Conclusion
+
+Below are the set of commands used in this tutorial and its corresponding snapshot
 
 | Command | Terminal | Description |
 | -------- | -------- | -------- |
-| npx truffle init    | ![](https://i.imgur.com/HZqjcDx.png)     | Text     |
-| npx truffle compile    |  ![](https://i.imgur.com/7zle53o.png)   | Text     |
-| npx truffle help    | ![](https://i.imgur.com/p3yZJgK.png)  | Text     |
-| npx truffle test    | ![](https://i.imgur.com/tjNBoSj.png)  | Text     |
-| npx truffle migrate --network avax   | ![](https://i.imgur.com/3ZNsa5J.png) | Text     |
-
-
+| *npx truffle init*    | ![](https://i.imgur.com/HZqjcDx.png)     | Text     |
+| *npx truffle compile*    |  ![](https://i.imgur.com/7zle53o.png)   | Text     |
+| *npx truffle help*    | ![](https://i.imgur.com/p3yZJgK.png)  | Text     |
+| *npx truffle test*    | ![](https://i.imgur.com/tjNBoSj.png)  | Text     |
+| *npx truffle migrate --network avax*   | ![](https://i.imgur.com/3ZNsa5J.png) | Text     |
+| *npx truffle networks*   | ![](https://i.imgur.com/QrGXZON.png) | Text     |
 
 
 # Dependencies
@@ -247,7 +262,6 @@ node_modules
   }
 ```
 
-### Video 
 
 
 ### Faucet 
@@ -259,23 +273,27 @@ Previous to deploy claim some faucets for the account.
 | Claim faucet |   ![](https://i.imgur.com/4eVHXFY.png)| 
 | transaction confirmed | ![](https://i.imgur.com/1T9IoBW.png) | 
 
-### Code Github 
+### Tutorial Source Code in Github 
 
-``` git
+```
 git clone 
 ```
 
 # References
 
-https://www.trufflesuite.com/docs/truffle/overview
-
-https://www.avax.network/
-
-https://docs.avax.network/learn/avalanche-bridge-faq
-
+**Avalanche Docs** https://docs.avax.network/
 https://www.avalabs.org/whitepapers
+https://www.avax.network/
+https://docs.avax.network/learn/avalanche-bridge-faq
+ 
+**Truffle Docs** https://www.trufflesuite.com/docs/truffle/overview
 
-
+**VS Code**
 https://code.visualstudio.com/
+https://code.visualstudio.com/docs/
 
-https://forum.openzeppelin.com/t/openzeppelin-upgrades-step-by-step-tutorial-for-truffle/3579
+**Avalanche** 
+https://github.com/ava-labs
+https://docs.avax.network/
+https://support.avax.network/en/collections/2353492-blockchain-basics
+
