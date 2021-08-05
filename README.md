@@ -4,7 +4,9 @@
 <img src="https://i.imgur.com/GA0LyT3.png " width="50" alt="AVA logo">
 </a>
 </p>
+
 # Introduction 
+
 What is Truffle ? 
 
 [Truffle](https://www.trufflesuite.com/truffle) is the most popular development framework for Ethereum with a mission to make your life a whole lot easier.
@@ -51,7 +53,7 @@ npm i @truffle/hdwallet-provider
 
 Lets create a truffle project: 
 
-```javascript=
+``` js
 npx truffle init
 ```
 
@@ -62,7 +64,7 @@ and if issues of security warnings appear in the terminal, we must execute `npm 
 By default truffle creates the Migration.sol file. 
 We add a value and get and set methods. 
 
-```solidity=
+``` solidity
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.4.22 <0.9.0;
 
