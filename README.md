@@ -86,7 +86,7 @@ and if issues of security warnings appear in the terminal, we must execute `npm 
 By default truffle creates the Migration.sol file. 
 We add a value and get and set methods. 
 
-```solidity=
+``` solidity
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.4.22 <0.9.0;
 
@@ -125,7 +125,7 @@ Lets install the testing framefork (there are several options but this time we w
 npm i --save-dev chai
 ```
 Lets create a Migration.test.js file
-```javascript=
+``` javascript
 const { expect } = require('chai');
 
 const Contract = artifacts.require('Migrations');
