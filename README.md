@@ -1,6 +1,6 @@
 
 <p align="left">
-<a href="https://bruzelle.com" target="_blank">
+<a href="https://www.avax.network" target="_blank">
 <img src="https://i.imgur.com/GA0LyT3.png " width="50" alt="AVA logo">
 </a>
 </p>
@@ -15,7 +15,7 @@
 - [Install Truffle](#install-truffle)
 - [Create a Truffle Project](#create-a-truffle-project)
     + [Testing locally the contract](#testing-locally-the-contract)
-  * [Faucet & Explorer](#faucet---explorer)
+  * [Faucet](#faucet---explorer)
 - [Compile with Truffle](#compile-with-truffle)
 - [Migrate with Truffle (Avax Testnet)](#migrate-with-truffle--avax-testnet-)
 - [Secure your code](#secure-your-code)
@@ -55,7 +55,6 @@ To initialize a project in node in the console of a terminal we execute the foll
 npm init -y 
 ```
 
-### Video 
 
 # Install Truffle 
 
@@ -86,7 +85,7 @@ and if issues of security warnings appear in the terminal, we must execute `npm 
 By default truffle creates the Migration.sol file. 
 We add a value and get and set methods. 
 
-``` solidity
+```solidity=
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.4.22 <0.9.0;
 
@@ -125,7 +124,7 @@ Lets install the testing framefork (there are several options but this time we w
 npm i --save-dev chai
 ```
 Lets create a Migration.test.js file
-``` javascript
+```javascript=
 const { expect } = require('chai');
 
 const Contract = artifacts.require('Migrations');
@@ -240,14 +239,14 @@ https://www.trufflesuite.com/docs/truffle/reference/truffle-commands and also Av
 
 Below are the set of commands used in this tutorial and its corresponding snapshot
 
-| Command | Terminal | Description |
-| -------- | -------- | -------- |
-| *npx truffle init*    | ![](https://i.imgur.com/HZqjcDx.png)     | Text     |
-| *npx truffle compile*    |  ![](https://i.imgur.com/7zle53o.png)   | Text     |
-| *npx truffle help*    | ![](https://i.imgur.com/p3yZJgK.png)  | Text     |
-| *npx truffle test*    | ![](https://i.imgur.com/tjNBoSj.png)  | Text     |
-| *npx truffle migrate --network avax*   | ![](https://i.imgur.com/3ZNsa5J.png) | Text     |
-| *npx truffle networks*   | ![](https://i.imgur.com/QrGXZON.png) | Text     |
+| Command | Terminal | 
+| -------- | -------- | 
+| *npx truffle init*    | ![](https://i.imgur.com/HZqjcDx.png) |
+| *npx truffle compile*    |  ![](https://i.imgur.com/7zle53o.png)   | 
+| *npx truffle help*    | ![](https://i.imgur.com/p3yZJgK.png)  | 
+| *npx truffle test*    | ![](https://i.imgur.com/tjNBoSj.png)  | 
+| *npx truffle migrate --network avax*   | ![](https://i.imgur.com/3ZNsa5J.png) | |
+| *npx truffle networks*   | ![](https://i.imgur.com/QrGXZON.png) | 
 
 
 # Dependencies
@@ -263,6 +262,13 @@ Below are the set of commands used in this tutorial and its corresponding snapsh
 ```
 
 
+### Video 
+
+An example of the installation and execution process is presented in the following link
+
+https://youtu.be/vAfdoCkg5Pw
+
+
 
 ### Faucet 
 
@@ -273,10 +279,12 @@ Previous to deploy claim some faucets for the account.
 | Claim faucet |   ![](https://i.imgur.com/4eVHXFY.png)| 
 | transaction confirmed | ![](https://i.imgur.com/1T9IoBW.png) | 
 
+
+
 ### Tutorial Source Code in Github 
 
 ```
-git clone 
+git clone https://github.com/aadorian/truffle_avalanche.git
 ```
 
 # References
@@ -296,4 +304,5 @@ https://code.visualstudio.com/docs/
 https://github.com/ava-labs
 https://docs.avax.network/
 https://support.avax.network/en/collections/2353492-blockchain-basics
+https://explorer.avax.network
 
