@@ -50,7 +50,7 @@ https://nodejs.org/en/download/
 # Create a Project
 
 To initialize a project in node in the console of a terminal we execute the following command
-```json=
+``` json
 
 npm init -y 
 ```
@@ -74,7 +74,7 @@ npm i @truffle/hdwallet-provider
 
 Lets create a truffle project: 
 
-```javascript=
+``` javascript
 npx truffle init
 ```
 
@@ -85,7 +85,7 @@ and if issues of security warnings appear in the terminal, we must execute `npm 
 By default truffle creates the Migration.sol file. 
 We add a value and get and set methods. 
 
-```solidity=
+``` solidity
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.4.22 <0.9.0;
 
@@ -124,7 +124,7 @@ Lets install the testing framefork (there are several options but this time we w
 npm i --save-dev chai
 ```
 Lets create a Migration.test.js file
-```javascript=
+``` javascript
 const { expect } = require('chai');
 
 const Contract = artifacts.require('Migrations');
@@ -144,7 +144,7 @@ contract('Migration', function () {
 ```
 
 To test the contract we use 
-```shell=
+``` shell
 npx truffle test
 ```
 
@@ -171,7 +171,7 @@ The following links are important for an account to have funds and to be able to
 
 # Compile with Truffle 
 
-```shell=
+``` shell
 npx truffle compile
 ```
 
@@ -199,7 +199,7 @@ const tx = await myContract.set(1).send({from: aaccounts[0]});
 
 
 
-```shell=
+``` shell
 npx truffle migrate --network avax
 ```
 
