@@ -5,9 +5,30 @@
 </a>
 </p>
 
+# Table of Contents
+- [Table of Contents](#table-of-contents)
+- [Introduction](#introduction)
+  * [Truffle](#truffle)
+- [Previous Steps](#previous-steps)
+  * [Install Node & VSCode](#install-node---vscode)
+- [Create a Project](#create-a-project)
+- [Install Truffle](#install-truffle)
+- [Create a Truffle Project](#create-a-truffle-project)
+    + [Testing locally the contract](#testing-locally-the-contract)
+  * [Faucet & Explorer](#faucet---explorer)
+- [Compile with Truffle](#compile-with-truffle)
+- [Migrate with Truffle (Avax Testnet)](#migrate-with-truffle--avax-testnet-)
+- [Secure your code](#secure-your-code)
+- [Dependencies](#dependencies)
+    + [Video](#video)
+    + [Faucet](#faucet)
+    + [Code Github](#code-github)
+- [References](#references)
+
+
 # Introduction 
 
-What is Truffle ? 
+## Truffle 
 
 [Truffle](https://www.trufflesuite.com/truffle) is the most popular development framework for Ethereum with a mission to make your life a whole lot easier.
 
@@ -103,7 +124,8 @@ Lets install the testing framefork (there are several options but this time we w
 npm i --save-dev chai
 ```
 Lets create a Migration.test.js file
-```javascript=
+
+``` js
 const { expect } = require('chai');
 
 const Contract = artifacts.require('Migrations');
@@ -134,7 +156,10 @@ Mnemonic only for TEST purposes remember to NEVER SHARE YOUR MNEMONIC PHRASE!!
 ```
 cancel surface pelican unfold concert city cheap blur female dog tragic era
 ```
-> 0xF6F057F7C9B37cB9d615008Cbd009d586b1BDEde
+
+```
+ 0xF6F057F7C9B37cB9d615008Cbd009d586b1BDEde
+ ```
 
 The following links are important for an account to have funds and to be able to deploy our contract in the blockchain. 
 
@@ -179,7 +204,7 @@ The contract address of this example is in
 
 # Secure your code
 
-```javascript=
+``` node
 npm i dotenv
 ```
 
@@ -236,7 +261,7 @@ Previous to deploy claim some faucets for the account.
 
 ### Code Github 
 
-```
+``` git
 git clone 
 ```
 
