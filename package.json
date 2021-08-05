@@ -20,9 +20,7 @@
   "devDependencies": {
     "@openzeppelin/truffle-upgrades": "^1.8.0",
     "chai": "^4.3.4",
-    "truffle": "^5.4.3"
-  },
-  "dependencies": {
+    "truffle": "^5.4.3",
     "@truffle/hdwallet-provider": "^1.4.2",
     "dotenv": "^10.0.0"
   }

@@ -3,75 +3,61 @@
 # Introduction 
 What is Truffle ? 
 
+[Truffle](https://www.trufflesuite.com/truffle) is the most popular development framework for Ethereum with a mission to make your life a whole lot easier.
 
-How to create and test contract calls with Truffle
 
-# Migrate 
+In this tutorial we will learn how to create and test contract calls with Truffle. Create a project, install truffle and test a contract with Truffle and deploy it to Ava blockchain.
 
-`npx truffle migrate --network rinkeby`
+# Previous Steps
+## Install Node & VSCode
 
-Steps
-# Install npm & VSCode
+Before compiling in truffle, we must have the following tools installed.
 
+[Visual Studio Code ](https://code.visualstudio.com/)(Visual Studio Code is a code editor redefined and optimized for building and debugging modern web and cloud applications)
 https://code.visualstudio.com/
 https://code.visualstudio.com/docs/
 
+[Node.js](https://nodejs.org/en/download/) (Node.js is designed to build scalable network applications.)
+https://nodejs.org/en/download/
 
-# Create a Proyect
+# Create a Project
+
+To initialize a project in node in the console of a terminal we execute the following command
 ```json=
 
 npm init -y 
 ```
-Creates the package.json file 
-```json=
-{
-  "name": "tt_truffle",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/aadorian/tt_truffle.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/aadorian/tt_truffle/issues"
-  },
-  "homepage": "https://github.com/aadorian/tt_truffle#readme"
-}
-```
-Lets create a .gitignore file with this line
-`node_modules`
+
 
 # Install Truffle 
 
-```javascript=
+To install truffle we must follow the instructions of [Truffle URL](https://www.trufflesuite.com/docs/truffle/getting-started/installation)
+```
 npm i --save-dev truffle
 ```
 
 
-For deploying contracts also install 
+For deploying contracts we will also install 
+```
 npm i @truffle/hdwallet-provider
+```
 
 
-# Create a Truffle Proyect
+# Create a Truffle Project
+
+Lets create a truffle project: 
+
 ```javascript=
 npx truffle init
 ```
 
->Note: recomended install upgrades `npm i --save-dev` @openzeppelin/truffle-upgrades
-and if issues of security `npm audit fix`
+>Note: We also recommend install upgrades `npm i --save-dev` @openzeppelin/truffle-upgrades
+and if issues of security warnings appear in the terminal, we must execute `npm audit fix`
 
 
 By default truffle creates the Migration.sol file. 
 We add a value and get and set methods. 
 
-`/contracts/Migrations.sol`
 ```solidity=
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.4.22 <0.9.0;
@@ -104,9 +90,9 @@ contract Migrations {
 }
 ```
 
-Testing locally the contract 
+### Testing locally the contract 
 
-Lets install the testing framefork
+Lets install the testing framefork (there are several options but this time we will use Chai)
 ```
 npm i --save-dev chai
 ```
@@ -135,16 +121,26 @@ To test the contract we use
 npx truffle test
 ```
 
-# Faucet & Explorer
-Mnemonic for TEST purposes NEVER SHARE YOUR MNEMONIC PHRASE!!
+## Faucet & Explorer
+
+In this tutorial we expose the
+Mnemonic only for TEST purposes remember to NEVER SHARE YOUR MNEMONIC PHRASE!!
 ```
 cancel surface pelican unfold concert city cheap blur female dog tragic era
 ```
 > 0xF6F057F7C9B37cB9d615008Cbd009d586b1BDEde
 
+The following links are important for an account to have funds and to be able to deploy our contract in the blockchain. 
 
-'https://faucet.avax-test.network'
-'https://docs.avax.network/build/tutorials/smart-contracts/deploy-a-smart-contract-on-avalanche-using-remix-and-metamask'
+
+
+| Description | Link  | GUI |
+| -------- | -------- | -------- |
+|Crypto faucets is an app or a website that distributes small amounts of cryptocurrencies. | 'https://faucet.avax-test.network'     | Text     |
+| Faucets URL  | [Avax Network](https://docs.avax.network/build/tutorials/smart-contracts/deploy-a-smart-contract-on-avalanche-using-remix-and-metamask)| -------- |
+| -------- | -------- | -------- |
+
+
 'https://cchain.explorer.avax-test.network/'
  The URL for RPC calls is https://api.avax-test.network/ext/bc/C/rpc and the network id is 0xa869
 
@@ -204,25 +200,39 @@ node_modules
 | npx truffle help    | ![](https://i.imgur.com/p3yZJgK.png)  | Text     |
 | npx truffle test    | ![](https://i.imgur.com/tjNBoSj.png)  | Text     |
 | npx truffle migrate --network avax   | ![](https://i.imgur.com/3ZNsa5J.png) | Text     |
-| npx   |  |    |
 
-
-Previous to deploy 
-
- Found your account with Faucet tokens using the public key
-  ![](https://i.imgur.com/4eVHXFY.png)
-  View the transaction in the Explorer
-   ![](https://i.imgur.com/1T9IoBW.png) |
-  Once the contract is deploy on the network it can be access in the explorer
- 
-![](https://i.imgur.com/EPRiENL.png) 
 
 
 
 # Dependencies
 
+```json=
+  "devDependencies": {
+    "@openzeppelin/truffle-upgrades": "^1.8.0",
+    "chai": "^4.3.4",
+    "truffle": "^5.4.3",
+    "@truffle/hdwallet-provider": "^1.4.2",
+    "dotenv": "^10.0.0"
+  }
+```
+
+### Video 
 
 
+### Faucet 
+
+Previous to deploy claim some faucets for the account.
+
+| Concept | Definition | 
+| -------- | -------- | 
+| Claim faucet |   ![](https://i.imgur.com/4eVHXFY.png)| 
+| transaction confirmed | ![](https://i.imgur.com/1T9IoBW.png) | 
+
+### Code Github 
+
+```
+git clone 
+```
 
 # References
 
