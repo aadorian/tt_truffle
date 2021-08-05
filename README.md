@@ -1,5 +1,9 @@
-![](https://i.imgur.com/GA0LyT3.png)
 
+<p align="left">
+<a href="https://bruzelle.com" target="_blank">
+<img src="https://i.imgur.com/GA0LyT3.png " width="50" alt="AVA logo">
+</a>
+</p>
 # Introduction 
 What is Truffle ? 
 
