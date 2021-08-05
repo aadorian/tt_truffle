@@ -164,7 +164,7 @@ The following links are important for an account to have funds and to be able to
 | -------- | -------- | 
 |Crypto faucets is an app or a website that distributes small amounts of cryptocurrencies. | https://faucet.avax-test.network     |
 | Faucets URL  | [Avax Network](https://docs.avax.network/build/tutorials/smart-contracts/deploy-a-smart-contract-on-avalanche-using-remix-and-metamask)| 
-| Explorer URL  | [Avax Explorer]https://explorer.avax.network | 
+| Explorer URL  | [Avax Explorer](https://explorer.avax.network) | 
 
 
 
