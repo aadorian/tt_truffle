@@ -6,6 +6,7 @@
 </p>
 
 
+
 # Introduction 
 *What is Truffle ?*
 
@@ -216,7 +217,7 @@ Below are the set of commands used in this tutorial and its corresponding snapsh
 | *npx truffle networks*   | ![](https://i.imgur.com/QrGXZON.png) | 
 
 
-# Dependencies
+### Dependencies
 
 ```json=
   "devDependencies": {
