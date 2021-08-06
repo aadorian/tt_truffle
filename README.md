@@ -5,48 +5,26 @@
 </a>
 </p>
 
-# Table of Contents
-- [Table of Contents](#table-of-contents)
-- [Introduction](#introduction)
-  * [Truffle](#truffle)
-- [Previous Steps](#previous-steps)
-  * [Install Node & VSCode](#install-node---vscode)
-- [Create a Project](#create-a-project)
-- [Install Truffle](#install-truffle)
-- [Create a Truffle Project](#create-a-truffle-project)
-    + [Testing locally the contract](#testing-locally-the-contract)
-  * [Faucet](#faucet---explorer)
-- [Compile with Truffle](#compile-with-truffle)
-- [Migrate with Truffle (Avax Testnet)](#migrate-with-truffle--avax-testnet-)
-- [Secure your code](#secure-your-code)
-- [Dependencies](#dependencies)
-    + [Video](#video)
-    + [Faucet](#faucet)
-    + [Tutorial Source Code in Github ](#code-github)
-- [References](#references)
-
 
 # Introduction 
 *What is Truffle ?*
 
-[Truffle](https://www.trufflesuite.com/truffle) is one of the most popular development frameworks for Ethereum. In this tutorial we will learn how to create and test contract with [Truffle](https://www.trufflesuite.com/truffle). We will fist create a project, install truffle and test a contract with truffle commands and finally deploy it to [Avalanche ](https://docs.avax.network/).
+[Truffle](https://www.trufflesuite.com/truffle) is one of the most popular development frameworks for Ethereum. In this tutorial we will learn how to create and test contract with [Truffle](https://www.trufflesuite.com/truffle). We will fist create a project, install truffle compile it and test it with truffle commands and finally deploy it to [Avalanche ](https://docs.avax.network/) testnet.
 
 *What is Avalanche?*
 >[Avalanche ](https://docs.avax.network/)is an open-source platform for launching decentralized applications and enterprise blockchain deployments in one interoperable, highly scalable ecosystem. Avalanche is the first decentralized smart contracts platform built for the scale of global finance, with near-instant transaction finality. Ethereum developers can quickly build on Avalanche as [Solidity](https://docs.soliditylang.org/en/v0.8.6/) works out-of-the-box.
 # Previous Steps
 ## Install Node & VSCode
 
-Before compiling in truffle, we must have the following tools installed.
+Before compiling in truffle, we must have the following tools installed [Visual Studio Code ](https://code.visualstudio.com/) and [Node.js](https://nodejs.org/en/download/).
 
 [Visual Studio Code ](https://code.visualstudio.com/) is a code editor redefined and optimized for building and debugging modern web and cloud applications)
-
-
 [Node.js](https://nodejs.org/en/download/)  is designed to build scalable network applications.
-https://nodejs.org/en/download/
+
 
 # Create a Project
 
-To initialize a project in node in the console of a terminal we execute the following command
+To create a project in using node.js in the console of a terminal we execute the following command
 ``` json
 
 npm init -y 
@@ -55,19 +33,15 @@ npm init -y
 
 # Install Truffle 
 
-To install truffle we must follow the instructions of [Truffle URL](https://www.trufflesuite.com/docs/truffle/getting-started/installation)
+In order to install truffle we must follow the instructions available in [Truffle URL](https://www.trufflesuite.com/docs/truffle/getting-started/installation)
 ```
 npm i --save-dev truffle
 ```
 
 
-For deploying contracts we will also install 
-```
-npm i @truffle/hdwallet-provider
-```
-
 ### Tutorial Source Code in Github 
 
+Final solucion of the source code in this tutorial is available at Github just clone it using: 
 ```
 git clone https://github.com/aadorian/truffle_avalanche.git
 ```
@@ -75,7 +49,7 @@ git clone https://github.com/aadorian/truffle_avalanche.git
 
 # Create a Truffle Project
 
-Lets create a truffle project: 
+First, lets create a truffle project: 
 
 ``` javascript
 npx truffle init
@@ -85,8 +59,8 @@ npx truffle init
 and if issues of security warnings appear in the terminal, we must execute `npm audit fix`
 
 
-By default truffle creates the Migration.sol file. 
-We add a value and get and set methods. 
+By default [truffle](https://www.trufflesuite.com/truffle) creates the `Migration.sol` file. 
+We also add a value and get and set methods for testing purpose. 
 
 ``` solidity
 // SPDX-License-Identifier: MIT
@@ -122,7 +96,7 @@ contract Migrations {
 
 ### Testing locally the contract 
 
-Lets install the testing framefork (there are several options but this time we will use Chai)
+Lets install the testing framefork (there are several JS testing frameworks but this time we will use Chai)
 ```
 npm i --save-dev chai
 ```
@@ -150,10 +124,15 @@ To test the contract we use
 ``` shell
 npx truffle test
 ```
+# Video 
+
+An example of the installation and execution process is presented in the following link
+
+https://youtu.be/vAfdoCkg5Pw
 
 ## Faucet & Explorer
 
-In this tutorial we expose the mnemonic phrase only for TEST purposes remember:  NEVER SHARE YOUR MNEMONIC PHRASE!!
+Notice thant in this tutorial we will expose the mnemonic phrase only for pedagogical purposes remember:  NEVER SHARE YOUR MNEMONIC PHRASE!!
 ```
 cancel surface pelican unfold concert city cheap blur female dog tragic era
 ```
@@ -161,9 +140,9 @@ The public key associated with the mnemonic phrase is
 
 > 0xF6F057F7C9B37cB9d615008Cbd009d586b1BDEde
 
-The following links are important for an account to have funds and to be able to deploy our contract in the blockchain. 
 
 
+[Avalanche ](https://docs.avax.network/) provides  a faucet application that can serve AVA tokens from a test network to an address.
 
 | Description | Reference |
 | -------- | -------- | 
@@ -176,7 +155,7 @@ The following links are important for an account to have funds and to be able to
 
 # Compile with Truffle 
 
-To compile existing smart contracts in Truffle (in our case Migrations.sol) we use: 
+To compile our existing smart contracts in Truffle (in our case Migrations.sol) we use: 
 ``` shell
 npx truffle compile
 ```
@@ -186,16 +165,17 @@ npx truffle compile
 
 # Migrate with Truffle (Avax Testnet)
 
-
+Finally to deploy our Contract in the [Avalanche ](https://docs.avax.network/) Testnet we configure truffle-config.js file and execute in the terminal: 
 
 ``` shell
 npx truffle migrate --network avax
 ```
 
-The contract address of this example is in
-0xa5bC2Ca1Ce90657Fc66d694fb8c264e29eAF6F7c
+The contract address of this example is 
+
+>0xa5bC2Ca1Ce90657Fc66d694fb8c264e29eAF6F7c
  
- The contract can be query in the Avax Explorer [](https://cchain.explorer.avax-test.network/address/0xa5bC2Ca1Ce90657Fc66d694fb8c264e29eAF6F7c/transactions)
+ > The contract can be query in the Avax Explorer [Link](https://cchain.explorer.avax-test.network/address/0xa5bC2Ca1Ce90657Fc66d694fb8c264e29eAF6F7c/transactions)
 
 
 # Secure your code
@@ -205,13 +185,11 @@ In order to avoid exposing the mnemonic phrase we use dotenv library.
 ```javascript=
 npm i dotenv
 ```
-Create a .env file  in the project and import in `truffle-config.js` with 
-`require("dotenv").config()`. Also remember to 
-access to the mnemonic now in a secure way using 
+Create a .env file  in the project and import in `truffle-config.js` with `require("dotenv").config()`. Also remember to access to the mnemonic now in a secure way using 
 ``` javascript
 const MNEMONIC = process.env.MNEMONIC 
 ```
-Also a good practice is to hide it from your Git repo using a `.gitignore` file should look like this
+Also a good practice is to hide it from your it repo using a `.gitignore` file should look like this
 
 ```
 node_modules
@@ -251,17 +229,12 @@ Below are the set of commands used in this tutorial and its corresponding snapsh
 ```
 
 
-### Video 
-
-An example of the installation and execution process is presented in the following link
-
-https://youtu.be/vAfdoCkg5Pw
 
 
 
 ### Faucet 
 
-Previous to deploy claim some faucets for the account.
+Previous to deploy remember to claim some tokens for the account.
 
 | Concept | Definition | 
 | -------- | -------- | 
@@ -270,7 +243,7 @@ Previous to deploy claim some faucets for the account.
 
 
 
-# Interacting with the Contract
+### Advance options:  Interacting with the Contract
 
 We can start an instance of ganache (local blockchain) to interact with our contract
 `npx truffle develop` 
@@ -278,7 +251,8 @@ We can start an instance of ganache (local blockchain) to interact with our cont
 See the deployed contracts
 `npx truffle networks` 
 
-And using the `truffle develop (console)`
+And using the `truffle develop (console)` we can interact with our Smart Contract.
+
 ``` javascript
 const myContract = await Migrations.deployed();
 let accounts = await web3.eth.getAccounts()
