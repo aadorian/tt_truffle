@@ -131,7 +131,7 @@ An example of the installation and execution process is presented in the followi
 
 https://youtu.be/vAfdoCkg5Pw
 
-## Faucet & Explorer
+### Faucet and Block Explorer
 
 Notice thant in this tutorial we will expose the mnemonic phrase only for pedagogical purposes remember:  NEVER SHARE YOUR MNEMONIC PHRASE!!
 ```
