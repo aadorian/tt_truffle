@@ -29,10 +29,7 @@
 # Introduction 
 *What is Truffle ?*
 
-[Truffle](https://www.trufflesuite.com/truffle) is the most popular development framework for Ethereum with a mission to make your life a whole lot easier.
-
-
-In this tutorial we will learn how to create and test contract  with Truffle. We will fist create a project, install truffle and test a contract with truffle commands and finally deploy it to Avalanche blockchain.
+[Truffle](https://www.trufflesuite.com/truffle) is one of the most popular development frameworks for Ethereum. In this tutorial we will learn how to create and test contract with [Truffle](https://www.trufflesuite.com/truffle). We will fist create a project, install truffle and test a contract with truffle commands and finally deploy it to [Avalanche ](https://docs.avax.network/).
 
 *What is Avalanche?*
 >[Avalanche ](https://docs.avax.network/)is an open-source platform for launching decentralized applications and enterprise blockchain deployments in one interoperable, highly scalable ecosystem. Avalanche is the first decentralized smart contracts platform built for the scale of global finance, with near-instant transaction finality. Ethereum developers can quickly build on Avalanche as [Solidity](https://docs.soliditylang.org/en/v0.8.6/) works out-of-the-box.
